@@ -14,7 +14,8 @@ const Navbar = () => {
           smooth={true}
           spy={true}
           offset={-200}
-          className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center nav-hover"
+          className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center nav-hover tooltip tooltip-right"
+          data-tip="Home"
         >
           <BiHomeAlt />
         </Link>
@@ -34,7 +35,7 @@ const Navbar = () => {
           spy={true}
           className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center nav-hover"
         >
-          <BsClipboardData />
+          <BsBriefcase />
         </Link>
         <Link
           to="projects"
@@ -43,7 +44,7 @@ const Navbar = () => {
           spy={true}
           className="cursor-pointer w-[60px] h-[60px] flex items-center justify-center nav-hover"
         >
-          <BsBriefcase />
+          <BsClipboardData />
         </Link>
         <Link
           to="contact"

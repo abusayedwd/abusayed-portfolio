@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-  background: linear-gradient(
-    92.23deg,
-    #ff56f6 21.43%,
-    #b936ee 50.63%,
-    #3bace2 100%,
-    #406aff 117.04%
-  );
-  box-shadow: 0px 4.42184px 107.23px rgba(255, 86, 246, 0.51);
-}
-
-.btn:hover {
-  background: linear-gradient(
-    92.23deg,
-    #406aff 21.43%,
-    #3bace2 50.63%,
-    #b936ee 100%,
-    #ff56f6 117.04%
-  );
-}
-
 .gradient,
 .active {
   background: linear-gradient(
@@ -32,14 +11,14 @@
     #07a8d1 100%,
     #0880e1 117.04%
   );
-  @apply scale-125
+  @apply scale-125;
 }
 
 .active {
   color: #fff;
   padding: 1rem;
   border-radius: 100%;
-  font-weight: 600
+  font-weight: 600;
 }
 
 @layer base {
@@ -73,5 +52,11 @@
 }
 
 .nav-hover {
-  @apply hover:bg-cyan-600 hover:rounded-full transition duration-200 hover:scale-125 rounded-full hover:shadow-2xl;
+  @apply hover:bg-cyan-400 hover:rounded-full transition duration-200 hover:scale-125 rounded-full hover:shadow-2xl;
+}
+.btn-main {
+  @apply font-semibold drop-shadow-2xl px-4 py-2 md:px-8 md:py-3 text-lg rounded-full bg-transparent text-white hover:bg-gradient-to-r hover:from-cyan-600 hover:via-cyan-400 hover:to-cyan-500 border-2 border-cyan-500 hover:border-cyan-400 hover:text-black hover:scale-110 transition duration-200;
+}
+.text-color{
+  @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-600 text-transparent bg-clip-text;
 }
