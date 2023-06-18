@@ -23,7 +23,7 @@ const Skills = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-4 h-20 flex-grow card rounded-box place-items-center"
+          className="grid grid-cols-4 h-20 flex-grow card rounded-box place-items-center gap-1 md:gap-8 lg:gap-1"
         >
           <div className="flex flex-col justify-center items-center">
             <img src={html} alt="" className="w-16 rounded-full nav-hover" />
@@ -56,7 +56,7 @@ const Skills = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-5 gap-1 h-20 flex-grow card rounded-box place-items-center mt-12 md:mt-0"
+          className="grid grid-cols-5 gap-1 h-20 flex-grow card rounded-box place-items-center mt-12 md:mt-0 md:gap-4 lg:gap-1"
         >
           <div className="flex flex-col justify-center items-center">
             <img
