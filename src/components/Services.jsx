@@ -1,6 +1,5 @@
 import React from "react";
 import Skills from "./Skills";
-import { BsArrowUpRight } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
 import webBuild from "../assets/web-build.jpg";

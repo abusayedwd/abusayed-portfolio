@@ -7,6 +7,7 @@ import tailwind from "../assets/tailwind (1).png";
 import react from "../assets/reeact.png";
 import node from "../assets/Noode.png";
 import mongo from "../assets/mongodb.png";
+import express from "../assets/express.png";
 
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
@@ -55,7 +56,7 @@ const Skills = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-4 h-20 flex-grow card rounded-box place-items-center mt-12 md:mt-0"
+          className="grid grid-cols-5 gap-1 h-20 flex-grow card rounded-box place-items-center mt-12 md:mt-0"
         >
           <div className="flex flex-col justify-center items-center">
             <img
@@ -67,7 +68,7 @@ const Skills = () => {
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src={react} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">REACT</p>
+            <p className="font-secondary font-semibold">ReactJS</p>
           </div>
           <div className="flex flex-col justify-center items-center">
             <img src={node} alt="" className="w-16 rounded-full nav-hover" />
@@ -76,6 +77,10 @@ const Skills = () => {
           <div className="flex flex-col justify-center items-center">
             <img src={mongo} alt="" className="w-16 rounded-full nav-hover" />
             <p className="font-secondary font-semibold">MongoDB</p>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <img src={express} alt="" className="w-16 rounded-full nav-hover" />
+            <p className="font-secondary font-semibold">ExpressJS</p>
           </div>
         </motion.div>
       </div>

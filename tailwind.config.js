@@ -13,13 +13,9 @@ export default {
       },
     },
     extend: {
-      colors: {
-        primary: "#0a0a0a",
-        accent: "#B809C3",
-      },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
-        about: "url('./assets/about.png')",
+        about: "url('./assets/about-image.png')",
         services: "url('./assets/services.png')",
       },
     },

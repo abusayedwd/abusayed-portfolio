@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/jsx-no-target-blank */
 import React from "react";
 import banner from "../assets/Banner-img.png";
 import {
@@ -16,10 +18,15 @@ const Banner = () => {
       <div className="container mx-auto mt-24 lg:mt-0">
         <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center">
           <div className="flex-1 text-center font-secondary lg:text-left">
-            <motion.h3  variants={fadein("up", 0.1)}
+            <motion.h3
+              variants={fadein("up", 0.1)}
               initial="hidden"
               whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }} className="text-xl">Hey There, I'm</motion.h3>
+              viewport={{ once: false, amount: 0.7 }}
+              className="text-xl"
+            >
+              Hey There, I'm
+            </motion.h3>
             <motion.h1
               variants={fadein("up", 0.3)}
               initial="hidden"
@@ -87,18 +94,27 @@ const Banner = () => {
                 viewport={{ once: false, amount: 0.7 }}
                 className="max-w-max mx-auto mt-6 lg:mx-0"
               >
-                <button className="flex items-center justify-center gap-2 btn-main">
-                  <BsDownload />
-                  Resume
-                </button>
+                <a
+                  href="/Resume-(Mahabub Ahmed).pdf"
+                  download={true}
+                  target="_blank"
+                >
+                  <button className="flex items-center justify-center gap-2 btn-main">
+                    Resume
+                    <BsDownload className="hover:scale-150 transition-all"/>
+                  </button>
+                </a>
               </motion.div>
             </motion.div>
           </div>
-          <motion.div  variants={fadein("down", 0.5)}
-              initial="hidden"
-              whileInView={"show"}
-              viewport={{ once: false, amount: 0.7 }} className="hidden lg:flex flex-1 mx-auto max-w-max">
-            <img src={banner} alt="banner" className="rounded-full h-full" />
+          <motion.div
+            variants={fadein("down", 0.5)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.7 }}
+            className="hidden lg:flex flex-1 mx-auto max-w-max"
+          >
+            <img src={banner} alt="banner" className="rounded-full h-full mix-blend-lighten" />
           </motion.div>
         </div>
       </div>
