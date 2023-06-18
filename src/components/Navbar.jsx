@@ -19,7 +19,7 @@ const Navbar = () => {
           <BiHomeAlt />
         </Link>
         <Link
-          to="about"
+          to="services"
           activeClass="active"
           smooth={true}
           spy={true}
@@ -28,7 +28,7 @@ const Navbar = () => {
           <BsBriefcase />
         </Link>
         <Link
-          to="services"
+          to="projects"
           activeClass="active"
           smooth={true}
           spy={true}
@@ -37,7 +37,7 @@ const Navbar = () => {
           <BsClipboardData />
         </Link>
         <Link
-          to="projects"
+          to="about"
           activeClass="active"
           smooth={true}
           spy={true}

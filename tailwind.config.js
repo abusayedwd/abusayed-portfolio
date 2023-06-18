@@ -1,30 +1,28 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     fontFamily: {
-      primary: 'Orbitron',
-      secondary: 'Rajdhani',
-      tertiary: 'Aldrich',
+      primary: "Orbitron",
+      secondary: "Rajdhani",
+      tertiary: "Aldrich",
     },
     container: {
       padding: {
-        DEFAULT: '15px',
+        DEFAULT: "15px",
       },
     },
     extend: {
       colors: {
-        primary: '#0a0a0a',
-        accent: '#B809C3',
+        primary: "#0a0a0a",
+        accent: "#B809C3",
       },
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
+        about: "url('./assets/about.png')",
+        services: "url('./assets/services.png')",
       },
     },
   },
   plugins: [require("daisyui")],
-}
-
+};
