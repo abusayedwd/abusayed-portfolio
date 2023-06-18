@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import Skills from "./Skills";
+
 
 const Services = () => {
-    return (
-        <div id='services' className='section'>
-            services
-        </div>
-    );
+  return (
+    <section id="services" className="container mx-auto">
+      <Skills/>
+    </section>
+  );
 };
 
 export default Services;
