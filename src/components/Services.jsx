@@ -6,6 +6,8 @@ import webBuild from "../assets/web-build.jpg";
 import reactDev from "../assets/react-dev.png";
 import maintenance from "../assets/maintenance.png";
 import SectionTitle from "../hooks/SectionTitle";
+import { Link } from "react-scroll";
+import { MdWorkHistory } from "react-icons/md";
 
 const Services = () => {
   const services = [
@@ -70,13 +72,15 @@ const Services = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="flex-1 lg:bg-services lg:bg-bottom bg-no-repeat mix-blend-lighten mb-12 lg:mb-0"
+            className="flex-1 mb-12 lg:mb-0"
           >
             <h2 className="text-color h2 font-semibold mb-6">What I Offer</h2>
             <h3 className="h3 max-w-[455px] mb-16">
               I offer full-stack development, customized web applications, responsive and interactive UI/UX, API development, database integration, and performance optimization.
             </h3>
-            <button className="btn-main">See My Work</button>
+            <Link to="projects" smooth={true}>
+            <button className="btn-main flex items-center gap-2"><MdWorkHistory/>See My Work</button>
+          </Link>
           </motion.div>
           <motion.div variants={fadein("left", 0.5)}
           initial="hidden"

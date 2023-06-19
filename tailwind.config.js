@@ -16,13 +16,14 @@ export default {
       backgroundImage: {
         site: "url('./assets/site-bg.jpg')",
         about: "url('./assets/about-image.png')",
-        services: "url('./assets/services.png')",
+        services: "url('./assets/service.png')",
       },
     },
   },
   daisyui: {
     themes: [
       "night",
+      "cupcake"
     ],
   },
   plugins: [require("daisyui")],

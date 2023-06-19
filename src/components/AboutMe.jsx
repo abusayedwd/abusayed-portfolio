@@ -55,7 +55,7 @@ const AboutMe = () => {
               </div>
             </div>
 
-            <Link to="home">
+            <Link to="home" smooth={true}>
               <button className="btn-main mt-2">Connect With Me</button>
             </Link>
           </motion.div>

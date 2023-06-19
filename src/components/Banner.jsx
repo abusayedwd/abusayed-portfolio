@@ -19,7 +19,7 @@ const Banner = () => {
         <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center">
           <div className="flex-1 text-center font-secondary lg:text-left">
             <motion.h3
-              variants={fadein("up", 0.1)}
+              variants={fadein("right", 0.1)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
@@ -28,7 +28,7 @@ const Banner = () => {
               Hey There, I'm
             </motion.h3>
             <motion.h1
-              variants={fadein("up", 0.3)}
+              variants={fadein("left", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
@@ -37,7 +37,7 @@ const Banner = () => {
               Mahabub Ahmed
             </motion.h1>
             <motion.div
-              variants={fadein("up", 0.3)}
+              variants={fadein("left", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
@@ -95,8 +95,7 @@ const Banner = () => {
                 className="max-w-max mx-auto mt-6 lg:mx-0"
               >
                 <a
-                  href="/Resume-(Mahabub Ahmed).pdf"
-                  download={true}
+                  href="https://drive.google.com/file/d/1mPTgLk00YEfKOAqL5xaw368dhHroO-_9/view"
                   target="_blank"
                 >
                   <button className="flex items-center justify-center gap-2 btn-main">
