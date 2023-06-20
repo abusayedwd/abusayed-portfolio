@@ -1,19 +1,43 @@
+/* eslint-disable no-undef */
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
 import { BsTelegram } from "react-icons/bs";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const ContactMe = () => {
+  const form = useRef();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const form = e.target;
-    const name = form.name.value;
-    const email = form.email.value;
-    const message = form.message.value;
-    const postData = { name: name, email: email, message: message };
-    console.log(postData);
-    form.reset()
+    const forms = e.target;
+    const name = forms.name.value;
+    emailjs
+      .sendForm(
+        `${import.meta.env.VITE_SERVICEID}`,
+        `${import.meta.env.VITE_TEMPLATEID}`,
+        form.current,
+        `${import.meta.env.VITE_PUBLICKEY}`
+      )
+      .then(
+        (result) => {
+          if (result.text == "OK") {
+            Swal.fire(
+              'Email Sent Successfully!',
+              `Thank you for you message ${name}`,
+              'success'
+            )
+          }
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+      toast.success("sent")
+    forms.reset();
   };
   return (
     <section id="contact" className="my-16 lg:section">
@@ -34,7 +58,9 @@ const ContactMe = () => {
               <span className="text-color">Together!</span>
             </h2>
           </motion.div>
-          <motion.form onSubmit={handleSubmit}
+          <motion.form
+            ref={form}
+            onSubmit={handleSubmit}
             variants={fadein("left", 0.3)}
             initial="hidden"
             whileInView={"show"}
@@ -43,7 +69,7 @@ const ContactMe = () => {
           >
             <input
               type="text"
-              placeholder="Your Email"
+              placeholder="Your Name"
               name="name"
               className="bg-transparent border-b py-3 outline-none w-full focus:border-cyan-500 transition duration-200"
             />

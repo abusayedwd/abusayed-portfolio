@@ -2,11 +2,7 @@
 <html lang="en" data-theme="night">
   <head>
     <meta charset="UTF-8" />
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/public/MLogo.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="/public/MLogo.png" />
     <!-- google fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
@@ -23,6 +19,15 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
+    </script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init(`${import.meta.env.VITE_PUBLICKEY}`);
+      })();
     </script>
   </body>
 </html>
