@@ -4,7 +4,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
-
 import img1 from "../assets/projects/Golden-1.jpg";
 import img2 from "../assets/projects/Playful-1.jpg";
 import img3 from "../assets/projects/Kitchen-1.jpg";
@@ -22,6 +21,13 @@ import logo6 from "../assets/express.png";
 import SectionTitle from "../hooks/SectionTitle";
 
 import { TbWorld, TbCode, TbCodeCircle } from "react-icons/tb";
+import { toast } from "react-hot-toast";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import SwiperCore, { Autoplay } from "swiper";
+import { Pagination } from "swiper";
 
 const projects = [
   {
@@ -103,79 +109,102 @@ const projects = [
   //   },
 ];
 const Projects = () => {
-  //   console.log(projects[0].technologies[0].tech1);
+  SwiperCore.use([Autoplay]);
+
+  const handleShow = () => {};
   return (
     <section id="projects" className="">
-      <div className="container mx-auto">
-        <SectionTitle heading={"PROJECTS"} />
-        <div className="flex-1 gap-y-12 mt-32 mb-10">
-          <div>
-            <h2 className="h2 leading-tight text-color font-semibold">
-              My Latest <br /> Work
-            </h2>
-            <p className="max-w-sm mb-6">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptates omnis eaque maxime quo qui enim deleniti aliquid modi.
-              Quidem, placeat!
-            </p>
-            <button className="btn-main">View All Project</button>
-          </div>
-        </div>
-        <div className="grid sm:grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10">
-          {projects.slice(0, 4).map((project) => (
-            <div
-              key={project.title}
-              className="group relative overflow-hidden border-2 border-white/50 rounded-xl"
-            >
-              <div className="group-hover:bg-black/70 w-1/2 absolute z-40 transition-all duration-300"></div>
-              <img
-                src={project.image}
-                alt=""
-                className="group-hover:scale-125 transition-all duration-500"
-              />
-              <div className="absolute -bottom-full left-12 group-hover:bottom-44 transition-all duration-700 z-50 text-color text-5xl font-bold mb-6">
-                {project.title}
-              </div>
-              <div className="absolute -bottom-full left-12 group-hover:bottom-36 transition-all duration-700 z-50 text-slate-500 text-lg font-bold mb-6">
-                {project.details}
-              </div>
-              <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50 text-color text-5xl font-bold mb-6 flex gap-6">
-                {project.technologies.map((item, i) => (
-                  <img
-                    src={item.image}
-                    key={i}
-                    className="h-12 w-12 rounded-full"
-                  />
-                ))}
-              </div>
-              <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50 flex gap-4">
-                <a href={project.liveLink} target="_blank">
-                  <button className="project-btn flex items-center gap-2">
-                    <TbWorld />
-                    Live
-                  </button>
-                </a>
-                <a href={project.clientCode} target="_blank">
-                  <button className="project-btn flex items-center gap-2">
-                    <TbCode />
-                    Client
-                  </button>
-                </a>
-                {project.serverCode ? (
-                  <a href={project.serverCode} target="_blank">
+      <Swiper
+        pagination={true}
+        slidesPerView={1}
+        modules={[Pagination, Autoplay]}
+        className="mySwiper"
+        autoplay
+        loop={true}
+      >
+        <div className="container mx-auto">
+          <SectionTitle heading={"PROJECTS"} />
+          <motion.div
+            variants={fadein("left", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="flex-1 gap-y-12 mt-32 mb-10"
+          >
+            <div>
+              <h2 className="h2 leading-tight text-color font-semibold">
+                My Latest <br /> Work
+              </h2>
+              <p className="max-w-sm mb-6">
+                Here are the projects that i have finished working on, these are my best projects so far, you can see the details when you hover over the image.
+              </p>
+              <button className="btn-main" onClick={handleShow}>
+                View All Project
+              </button>
+            </div>
+          </motion.div>
+          <motion.div
+            variants={fadein("right", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="grid sm:grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10"
+          >
+            {projects.slice(0, 4).map((project) => (
+              <div
+                key={project.title}
+                className="group relative overflow-hidden border-2 border-white/50 rounded-xl"
+              >
+                <div className="group-hover:bg-black/70 w-1/2 absolute z-40 transition-all duration-300"></div>
+                <img
+                  src={project.image}
+                  alt=""
+                  className="group-hover:scale-125 transition-all duration-500 w-screen h-[400px]"
+                />
+                <div className="absolute -bottom-full left-12 group-hover:bottom-44 transition-all duration-700 z-50 text-color text-5xl font-bold mb-6">
+                  {project.title}
+                </div>
+                <div className="absolute -bottom-full left-12 group-hover:bottom-36 transition-all duration-700 z-50 text-slate-500 text-lg font-bold mb-6">
+                  {project.details}
+                </div>
+                <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50 text-color text-5xl font-bold mb-6 flex gap-6">
+                  {project.technologies.map((item, i) => (
+                    <img
+                      src={item.image}
+                      key={i}
+                      className="h-12 w-12 rounded-full nav-hover"
+                    />
+                  ))}
+                </div>
+                <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50 flex gap-4">
+                  <a href={project.liveLink} target="_blank">
                     <button className="project-btn flex items-center gap-2">
-                      <TbCodeCircle />
-                      Server
+                      <TbWorld className="hover:animate-spin" />
+                      Live
                     </button>
                   </a>
-                ) : (
-                  ""
-                )}
+                  <a href={project.clientCode} target="_blank">
+                    <button className="project-btn flex items-center gap-2">
+                      <TbCode className="hover:animate-spin" />
+                      Client
+                    </button>
+                  </a>
+                  {project.serverCode ? (
+                    <a href={project.serverCode} target="_blank">
+                      <button className="project-btn flex items-center gap-2">
+                        <TbCodeCircle className="hover:animate-spin" />
+                        Server
+                      </button>
+                    </a>
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </motion.div>
         </div>
-      </div>
+      </Swiper>
     </section>
   );
 };

@@ -3,7 +3,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
 import { Link } from "react-scroll";
-import { MdEmail, MdFacebook, MdWhatsapp } from "react-icons/md";
+import {
+  MdEmail,
+  MdFacebook,
+  MdWhatsapp,
+  MdOutlineConnectWithoutContact,
+} from "react-icons/md";
 
 const AboutMe = () => {
   return (
@@ -35,8 +40,8 @@ const AboutMe = () => {
               to all kinds of devices. I have the ability to write semantic,
               cross-browser compatible, clean code by hand that is re-useable,
               maintainable, and easy to understand. The main areas of my
-              expertise are HTML, CSS, Bootstrap, JavaScript , React & Redux. I
-              also have intermediate knowledge of Next.js Node.js, Express.js &
+              expertise are HTML, CSS, Bootstrap, JavaScript , React. I also
+              have intermediate knowledge of Next.js Node.js, Express.js &
               MongoDB. So if you are looking for a front-end developer for your
               company, I can be the solution you're looking for. I am very much
               enthusiastic to show you how my experience and skills meet your
@@ -56,7 +61,10 @@ const AboutMe = () => {
             </div>
 
             <Link to="home" smooth={true}>
-              <button className="btn-main mt-2">Connect With Me</button>
+              <button className="btn-main mt-2 flex items-center gap-1">
+                Connect With Me
+                <MdOutlineConnectWithoutContact className="hover:animate-bounce"/>
+              </button>
             </Link>
           </motion.div>
         </div>

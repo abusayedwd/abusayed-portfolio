@@ -100,7 +100,7 @@ const Banner = () => {
                 >
                   <button className="flex items-center justify-center gap-2 btn-main">
                     Resume
-                    <BsDownload className="hover:scale-150 transition-all"/>
+                    <BsDownload className="hover:animate-bounce transition-all"/>
                   </button>
                 </a>
               </motion.div>

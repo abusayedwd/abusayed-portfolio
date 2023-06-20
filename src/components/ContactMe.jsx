@@ -25,18 +25,13 @@ const ContactMe = () => {
       .then(
         (result) => {
           if (result.text == "OK") {
-            Swal.fire(
-              'Email Sent Successfully!',
-              `Thank you for you message ${name}`,
-              'success'
-            )
+            toast.success(`Thank you for your message ${name}`);
           }
         },
         (error) => {
-          console.log(error);
+          toast.error("Sorry, The email was not sent!");
         }
       );
-      toast.success("sent")
     forms.reset();
   };
   return (
@@ -85,7 +80,7 @@ const ContactMe = () => {
               className="bg-transparent border-b py-3 outline-none w-full focus:border-cyan-500 transition-all resize-none mb-12"
             ></textarea>
             <button type="submit" className="btn-main flex items-center gap-2">
-              <BsTelegram />
+              <BsTelegram className="hover:animate-bounce"/>
               Send Message
             </button>
           </motion.form>
