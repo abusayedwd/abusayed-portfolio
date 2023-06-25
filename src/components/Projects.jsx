@@ -22,11 +22,6 @@ import SectionTitle from "../hooks/SectionTitle";
 
 import { TbWorld, TbCode, TbCodeCircle } from "react-icons/tb";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import SwiperCore, { Autoplay } from "swiper";
-import { Pagination } from "swiper";
 
 const projects = [
   {
@@ -108,19 +103,10 @@ const projects = [
   //   },
 ];
 const Projects = () => {
-  SwiperCore.use([Autoplay]);
 
   const handleShow = () => {};
   return (
     <section id="projects" className="">
-      <Swiper
-        pagination={true}
-        slidesPerView={1}
-        modules={[Pagination, Autoplay]}
-        className="mySwiper"
-        autoplay
-        loop={true}
-      >
         <div className="container mx-auto">
           <SectionTitle heading={"PROJECTS"} />
           <motion.div
@@ -203,7 +189,6 @@ const Projects = () => {
             ))}
           </motion.div>
         </div>
-      </Swiper>
     </section>
   );
 };
