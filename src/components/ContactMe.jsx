@@ -6,7 +6,6 @@ import { fadein } from "../hooks/fadein";
 import { BsTelegram } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
-import Swal from "sweetalert2";
 
 const ContactMe = () => {
   const form = useRef();
@@ -35,7 +34,7 @@ const ContactMe = () => {
     forms.reset();
   };
   return (
-    <section id="contact" className="my-16 lg:section">
+    <section id="contact" className="my-16 mt-32 section">
       <div className="container mx-auto">
         <div className="flex flex-col lg:flex-row">
           <motion.div

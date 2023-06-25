@@ -23,7 +23,7 @@ const App = () => {
   return (
     <>
       {loading ? (
-        <div className="flex flex-col justify-center items-center mt-[400px]">
+        <div className="flex flex-col justify-center items-center mt-[350px]">
           <motion.div
             animate={{ y: [20, 50, 20], opacity: 1, scale: 0.8 }}
             transition={{

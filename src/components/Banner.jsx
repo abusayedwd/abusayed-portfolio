@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-target-blank */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import banner from "../assets/Banner-img.png";
 import {
   BsFacebook,
@@ -12,7 +12,21 @@ import {
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
+import TextTransition, { presets } from "react-text-transition";
+
+const TEXTS = [
+  "MERN Stack Developer",
+  "React.JS Developer",
+  "Front End Developer",
+];
+
 const Banner = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => setIndex((index) => index + 1), 2500);
+    return () => clearTimeout(intervalId);
+  }, []);
   return (
     <section id="home" className="mt-24 flex items-center">
       <div className="container mx-auto mt-24 lg:mt-0">
@@ -43,8 +57,9 @@ const Banner = () => {
               viewport={{ once: false, amount: 0.7 }}
               className="mb-6 text-[36px] lg:text-[60px] font-secondary font-semibold uppercase leading-[1]"
             >
-              <span className="mr-4">I'm a</span>
-              <TypeAnimation
+              <div className="lg:flex">
+                <span className="mr-4">I'm a</span>
+                {/* <TypeAnimation
                 sequence={[
                   "MERN Stack Developer",
                   2000,
@@ -57,7 +72,13 @@ const Banner = () => {
                 wrapper="span"
                 repeat={Infinity}
                 className="text-color"
-              />
+              /> */}
+                <span className="text-cyan-400 flex items-center justify-center md:text-4xl lg:text-[60px]">
+                  <TextTransition springConfig={presets.gentle}>
+                    {TEXTS[index % TEXTS.length]}
+                  </TextTransition>{" "}
+                </span>
+              </div>
               <motion.div
                 variants={fadein("up", 0.6)}
                 initial="hidden"
@@ -100,7 +121,7 @@ const Banner = () => {
                 >
                   <button className="flex items-center justify-center gap-2 btn-main">
                     Resume
-                    <BsDownload className="hover:animate-bounce transition-all"/>
+                    <BsDownload className="hover:animate-bounce transition-all" />
                   </button>
                 </a>
               </motion.div>
@@ -113,7 +134,11 @@ const Banner = () => {
             viewport={{ once: false, amount: 0.7 }}
             className="hidden lg:flex flex-1 mx-auto max-w-max"
           >
-            <img src={banner} alt="banner" className="rounded-full h-full mix-blend-lighten" />
+            <img
+              src={banner}
+              alt="banner"
+              className="rounded-full h-full mix-blend-lighten"
+            />
           </motion.div>
         </div>
       </div>

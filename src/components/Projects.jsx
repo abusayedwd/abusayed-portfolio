@@ -21,7 +21,6 @@ import logo6 from "../assets/express.png";
 import SectionTitle from "../hooks/SectionTitle";
 
 import { TbWorld, TbCode, TbCodeCircle } from "react-icons/tb";
-import { toast } from "react-hot-toast";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -31,54 +30,54 @@ import { Pagination } from "swiper";
 
 const projects = [
   {
-    image: `${img1}`,
+    image: img1,
     title: "Golden Peaks",
     details: "Summer camp full MERN web application.",
     technologies: [
-      { image: `${logo1}` },
-      { image: `${logo4}` },
-      { image: `${logo6}` },
-      { image: `${logo5}` },
+      { image: logo1 },
+      { image: logo4 },
+      { image: logo6 },
+      { image: logo5 },
     ],
     liveLink: "https://assignment-12-1c977.web.app/",
     clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
     serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
   },
   {
-    image: `${img2}`,
+    image: img2,
     title: "Playful Delights",
     details: "Toy store full MERN web application.",
     technologies: [
-      { image: `${logo1}` },
-      { image: `${logo4}` },
-      { image: `${logo6}` },
-      { image: `${logo5}` },
+      { image: logo1 },
+      { image: logo4 },
+      { image: logo6 },
+      { image: logo5 },
     ],
     liveLink: "https://assignment-11-a4819.web.app/",
     clientCode: "https://github.com/Astro177/Playful-Delights",
     serverCode: "https://github.com/Astro177/Playful-Delights-server",
   },
   {
-    image: `${img3}`,
+    image: img3,
     title: "Kitchen Diaries",
     details: "Chef and food details full React web application.",
     technologies: [
-      { image: `${logo1}` },
-      { image: `${logo6}` },
-      { image: `${logo5}` },
+      { image: logo1 },
+      { image: logo6 },
+      { image: logo5 },
     ],
     liveLink: "https://assignment-12-1c977.web.app/",
     clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
     serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
   },
   {
-    image: `${img4}`,
+    image: img4,
     title: "Opportunities Point",
     details: "Job hunting full React web application.",
     technologies: [
-      { image: `${logo1}` },
-      { image: `${logo6}` },
-      { image: `${logo5}` },
+      { image: logo1 },
+      { image: logo6 },
+      { image: logo5 },
     ],
     liveLink: "https://exquisite-baklava-16bf3e.netlify.app/",
     clientCode: "https://github.com/Astro177/Opprtunity-Point",
@@ -164,7 +163,7 @@ const Projects = () => {
                 <div className="absolute -bottom-full left-12 group-hover:bottom-44 transition-all duration-700 z-50 text-color text-5xl font-bold mb-6">
                   {project.title}
                 </div>
-                <div className="absolute -bottom-full left-12 group-hover:bottom-36 transition-all duration-700 z-50 text-slate-500 text-lg font-bold mb-6">
+                <div className="absolute -bottom-full left-12 group-hover:bottom-36 transition-all duration-700 z-50 text-cyan-600 text-lg font-bold mb-6">
                   {project.details}
                 </div>
                 <div className="absolute -bottom-full left-12 group-hover:bottom-24 transition-all duration-500 z-50 text-color text-5xl font-bold mb-6 flex gap-6">
@@ -176,7 +175,7 @@ const Projects = () => {
                     />
                   ))}
                 </div>
-                <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50 flex gap-4">
+                <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50 flex sm:gap-0 md:gap-4">
                   <a href={project.liveLink} target="_blank">
                     <button className="project-btn flex items-center gap-2">
                       <TbWorld className="hover:animate-spin" />
