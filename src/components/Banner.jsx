@@ -9,6 +9,7 @@ import {
   BsInstagram,
   BsDownload,
 } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
@@ -107,6 +108,9 @@ const Banner = () => {
                 >
                   <BsLinkedin className="nav-hover" />
                 </a>
+                <a target="_blank" href="mailto:mahabub.ahmed175@gmail.com">
+                  <SiGmail className="nav-hover" />
+                </a>
               </motion.div>
               <motion.div
                 variants={fadein("up", 0.8)}
@@ -116,7 +120,8 @@ const Banner = () => {
                 className="max-w-max mx-auto mt-6 lg:mx-0"
               >
                 <a
-                  href="https://drive.google.com/file/d/1mPTgLk00YEfKOAqL5xaw368dhHroO-_9/view"
+                  // href="https://drive.google.com/file/d/1mPTgLk00YEfKOAqL5xaw368dhHroO-_9/view"
+                  href="/Resume-(Mahabub Ahmed).pdf"
                   target="_blank"
                 >
                   <button className="flex items-center justify-center gap-2 btn-main">
