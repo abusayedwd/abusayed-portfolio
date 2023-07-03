@@ -60,7 +60,7 @@ const Skills = () => {
             <p className="font-secondary ml-4 font-semibold">FIREBASE</p>
           </div>
         </motion.div>
-        <div className="divider divider-horizontal border-cyan-700 border-x-2"></div>
+        {/* <div className="divider divider-horizontal border-cyan-700 border-x-2"></div> */}
         <motion.div
           variants={fadein("left", 0.4)}
           initial="hidden"

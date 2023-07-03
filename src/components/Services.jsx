@@ -15,7 +15,7 @@ const Services = () => {
       id: "1",
       name: "Website Building",
       details:
-        "I provide end-to-end website development services, including design, front-end development, back-end development, and database integration. Whether you need a simple static website or a complex web application, I can create a customized solution tailored to your needs.",
+        "I provide end-to-end website development services, including design, front-end development, back-end development, and database integration. Whether you need a simple static website or a complex web application.  ",
       technologies: [
         "HTML",
         "CSS",
@@ -31,13 +31,12 @@ const Services = () => {
       id: "2",
       name: "React App Development",
       details:
-        "I specialize in developing interactive and responsive web applications using the React framework. From single-page applications (SPAs) to complex UI/UX designs, I can build scalable and efficient React apps that meet your specific requirements.",
+        "I specialize in developing interactive and responsive web applications using the React framework. From single-page applications (SPAs) to complex UI/UX designs.",
       technologies: [
         "React",
         "JavaScript",
         "HTML",
         "CSS",
-        "Redux",
         "Webpack",
         "Babel",
       ],
@@ -98,12 +97,12 @@ const Services = () => {
                       <img
                         src={image}
                         alt=""
-                        className="w-36 h-24 rounded-2xl mb-4"
+                        className="w-32 h-24  md:mt-24 rounded-2xl mb-4"
                       />
                       <h4 className="text-[20px] tracking-wider font-primary font-semibold mb-6">
                         {name}
                       </h4>
-                      <p className="font-secondary leading-tight">{details}</p>
+                      <p className="font-secondary mb-16 leading-tight">{details}</p>
                     </div>
                   </div>
                 );

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "/MLogo.png";
+import logo from '../../public/logo sayed.jpg';
 import { Link } from "react-scroll";
  
 
@@ -16,7 +16,7 @@ const Header = () => {
                 className="w-16 rounded-full hover:scale-150 transition duration-300"
               />
             </a>
-            <h1>ABU SAYED</h1>
+            <h1 className="ml-4">ABU SAYED</h1>
           </div>
           <Link to="projects" smooth={true}>
             <button className="btn-main flex items-center gap-2">
