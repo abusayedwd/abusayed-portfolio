@@ -16,14 +16,14 @@ const ContactMe = () => {
     const name = forms.name.value;
     emailjs
       .sendForm(
-        `${import.meta.env.VITE_SERVICEID}`,
-        `${import.meta.env.VITE_TEMPLATEID}`,
-        form.current,
-        `${import.meta.env.VITE_PUBLICKEY}`
+        "service_1g9uwu9",
+        "template_x3evx4l", 
+        form.current, 
+        "AkC6mNX1-79ab7Oxz"
       )
       .then(
         (result) => {
-          if (result.text == "OK") {
+          if (result) {
             toast.success(`Thank you for your message ${name}`);
           }
         },
@@ -34,9 +34,9 @@ const ContactMe = () => {
     forms.reset();
   };
   return (
-    <section id="contact" className="my-16 mt-32 section">
+    <section id="contact" className="my-16 md:mt-32 mt-[600px] section">
       <div className="container mx-auto">
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col md:px-16 lg:flex-row">
           <motion.div
             variants={fadein("right", 0.3)}
             initial="hidden"
@@ -44,12 +44,10 @@ const ContactMe = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="w-[480px] flex-1 justify-start items-center"
           >
-            <h4 className="text-2xl uppercase font-semibold mb-2 tracking-wide">
-              Get In Touch
-            </h4>
+             
             <h2 className="text-[45px] lg:text-[85px] leading-none mb-12 font-medium">
-              Let's Work <br />
-              <span className="text-color">Together!</span>
+              You can contact me <br />
+              <span className="text-color">If you want!</span>
             </h2>
           </motion.div>
           <motion.form

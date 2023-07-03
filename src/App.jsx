@@ -9,7 +9,7 @@ import Projects from "./components/Projects";
 import ContactMe from "./components/ContactMe";
 import Footer from "./components/Footer";
 import { PropagateLoader } from "react-spinners";
-import logo from "/MLogo.png";
+import logo from "../public/logo sayed.jpg";
 import { motion } from "framer-motion";
 
 const App = () => {

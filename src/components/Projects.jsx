@@ -26,44 +26,44 @@ import { TbWorld, TbCode, TbCodeCircle } from "react-icons/tb";
 const projects = [
   {
     image: img1,
-    title: "Golden Peaks",
-    details: "Summer camp full MERN web application.",
+    title: "Sport Summer Camp",
+    details: "Summer camp MERN web application.",
     technologies: [
       { image: logo1 },
       { image: logo4 },
       { image: logo6 },
       { image: logo5 },
     ],
-    liveLink: "https://assignment-12-1c977.web.app/",
-    clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
-    serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
+    liveLink: "https://sports-school-camp.web.app/",
+    clientCode: "https://github.com/abusayedwd/sports-summerCamp-client",
+    serverCode: "https://github.com/abusayedwd/sports-summerCamp-server",
   },
   {
     image: img2,
-    title: "Playful Delights",
-    details: "Toy store full MERN web application.",
+    title: "KIDOLL TOY",
+    details: "Toy market MERN web application.",
     technologies: [
       { image: logo1 },
       { image: logo4 },
       { image: logo6 },
       { image: logo5 },
     ],
-    liveLink: "https://assignment-11-a4819.web.app/",
-    clientCode: "https://github.com/Astro177/Playful-Delights",
-    serverCode: "https://github.com/Astro177/Playful-Delights-server",
+    liveLink: "https://doll-toy-a11.web.app/",
+    clientCode: "https://github.com/abusayedwd/doll-toyMarket-client-side",
+    serverCode: "https://github.com/abusayedwd/doll-toyMarket-server-side",
   },
   {
     image: img3,
-    title: "Kitchen Diaries",
-    details: "Chef and food details full React web application.",
+    title: "BD RECIPE HUB",
+    details: "Chef and food Recipe details full React web application.",
     technologies: [
       { image: logo1 },
       { image: logo6 },
       { image: logo5 },
     ],
-    liveLink: "https://assignment-12-1c977.web.app/",
-    clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
-    serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
+    liveLink: "https://food-recipe-a10.web.app/",
+    clientCode: "https://github.com/abusayedwd/food-recipe-clientSide",
+    serverCode: "https://github.com/abusayedwd/food-recipe-serverSide",
   },
   // {
   //   image: img4,
@@ -80,12 +80,11 @@ const projects = [
       
 ];
 const Projects = () => {
-
-  const handleShow = () => {};
+ 
   return (
     <section id="projects" className="">
         <div className="container mx-auto">
-          <SectionTitle heading={"PROJECTS"} />
+          
           <motion.div
             variants={fadein("left", 0.3)}
             initial="hidden"
@@ -93,16 +92,15 @@ const Projects = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 gap-y-12 mt-32 mb-10"
           >
-            <div>
+            <SectionTitle heading={"PROJECTS"} />
+            <div className="text-center mt-6">
               <h2 className="h2 leading-tight text-color font-semibold">
-                My Latest <br /> Work
+                My Latest  Work
               </h2>
-              <p className="max-w-sm mb-6">
-                Here are the projects that i have finished working on, these are my best projects so far, you can see the details when you hover over the image.
+              <p >
+                Here are the projects that i have finished <br /> working on these are my best projects so far  you <br /> can see the details when you hover over the image.
               </p>
-              <button className="btn-main" onClick={handleShow}>
-                View All Project
-              </button>
+               
             </div>
           </motion.div>
           <motion.div
@@ -110,7 +108,7 @@ const Projects = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
-            className="grid sm:grid-cols-1 lg:grid-cols-2 items-center justify-center gap-10"
+            className="grid sm:grid-cols-1 lg:grid-cols-3 items-center justify-center gap-10"
           >
             {projects.slice(0, 4).map((project) => (
               <div
@@ -138,7 +136,7 @@ const Projects = () => {
                     />
                   ))}
                 </div>
-                <div className="absolute -bottom-full left-12 group-hover:bottom-14 transition-all duration-700 z-50 flex sm:gap-0 md:gap-4">
+                <div className="absolute -bottom-full group-hover:bottom-14 transition-all duration-700 z-50 flex sm:gap-0 md:gap-4">
                   <a href={project.liveLink} target="_blank">
                     <button className="project-btn flex items-center gap-2">
                       <TbWorld className="hover:animate-spin" />
@@ -152,7 +150,7 @@ const Projects = () => {
                     </button>
                   </a>
                   {project.serverCode ? (
-                    <a href={project.serverCode} target="_blank">
+                    <a className="" href={project.serverCode} target="_blank">
                       <button className="project-btn flex items-center gap-2">
                         <TbCodeCircle className="hover:animate-spin" />
                         Server

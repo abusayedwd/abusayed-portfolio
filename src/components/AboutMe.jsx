@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
 import { Link } from "react-scroll";
+import about2 from '../assets/about2.jpg'
 import {
   MdEmail,
   MdFacebook,
@@ -12,7 +13,7 @@ import {
 
 const AboutMe = () => {
   return (
-    <div id="about" className="section">
+    <div id="about" className="section mt-12 md:mb-4">
       <div className="container mx-auto">
         <div className="flex flex-col gap-y-12 lg:flex-row-reverse lg:items-center lg:gap-x-20 lg:gap-y-0 h-screen">
           <motion.div
@@ -21,7 +22,10 @@ const AboutMe = () => {
             whileInView={"show"}
             viewport={{ once: false, amount: 0.3 }}
             className="flex-1 bg-about bg-contain bg-no-repeat h-[550px] mix-blend-lighten bg-top"
-          ></motion.div>
+          >
+          
+            <img className="h-72 rounded-3xl" src={about2} alt="" />
+          </motion.div>
           <motion.div
             variants={fadein("right", 0.3)}
             initial="hidden"
