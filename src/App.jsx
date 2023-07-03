@@ -39,7 +39,7 @@ const App = () => {
           <PropagateLoader size={25} color="#07a8D1" />
         </div>
       ) : (
-        <div>
+        <div >
           <Header />
           <Banner />
           <Navbar />

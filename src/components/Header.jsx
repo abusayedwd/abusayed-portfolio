@@ -1,11 +1,11 @@
 import React from "react";
 import logo from "/MLogo.png";
 import { Link } from "react-scroll";
-import { MdWorkHistory } from "react-icons/md";
+ 
 
 const Header = () => {
   return (
-    <header className="py-5">
+    <header className="py-5 px-12">
       <div className="container mx-auto">
         <div className="flex justify-between items-center">
           <div className="flex items-center text-color font-primary font-semibold">
@@ -20,8 +20,8 @@ const Header = () => {
           </div>
           <Link to="projects" smooth={true}>
             <button className="btn-main flex items-center gap-2">
-              See My Work
-              <MdWorkHistory />
+              My Project
+              
             </button>
           </Link>
         </div>

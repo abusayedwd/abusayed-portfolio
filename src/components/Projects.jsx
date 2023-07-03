@@ -4,10 +4,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
-import img1 from "../assets/projects/Golden-1.jpg";
-import img2 from "../assets/projects/Playful-1.jpg";
-import img3 from "../assets/projects/Kitchen-1.jpg";
-import img4 from "../assets/projects/Point-1.jpg";
+import img1 from "../assets/projects/sports camp.png";
+import img2 from "../assets/projects/toyMarket.png";
+import img3 from "../assets/projects/bdrecipe hub.png";
+ 
 // import img5 from "../assets/portfolio-img2.png";
 // import img6 from "../assets/portfolio-img3.png";
 
@@ -65,42 +65,19 @@ const projects = [
     clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
     serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
   },
-  {
-    image: img4,
-    title: "Opportunities Point",
-    details: "Job hunting full React web application.",
-    technologies: [
-      { image: logo1 },
-      { image: logo6 },
-      { image: logo5 },
-    ],
-    liveLink: "https://exquisite-baklava-16bf3e.netlify.app/",
-    clientCode: "https://github.com/Astro177/Opprtunity-Point",
-  },
-  //   {
-  //     image: `${img1}`,
-  //     title: "Golden Peaks",
-  //     technologies: [
-  //         {tech1: `${logo1}`},
-  //         {tech3: `${logo6}`},
-  //         {tech4: `${logo5}`},
-  //     ],
-  //     liveLink: "https://assignment-12-1c977.web.app/",
-  //     clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
-  //     serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
-  //   },
-  //   {
-  //     image: `${img1}`,
-  //     title: "Golden Peaks",
-  //     technologies: [
-  //         {tech1: `${logo1}`},
-  //         {tech3: `${logo6}`},
-  //         {tech4: `${logo5}`},
-  //     ],
-  //     liveLink: "https://assignment-12-1c977.web.app/",
-  //     clientCode: "https://github.com/Astro177/Golden-Peaks-Client",
-  //     serverCode: "https://github.com/Astro177/Golden-Peaks-Server",
-  //   },
+  // {
+  //   image: img4,
+  //   title: "Opportunities Point",
+  //   details: "Job hunting full React web application.",
+  //   technologies: [
+  //     { image: logo1 },
+  //     { image: logo6 },
+  //     { image: logo5 },
+  //   ],
+  //   liveLink: "https://exquisite-baklava-16bf3e.netlify.app/",
+  //   clientCode: "https://github.com/Astro177/Opprtunity-Point",
+  // },
+      
 ];
 const Projects = () => {
 

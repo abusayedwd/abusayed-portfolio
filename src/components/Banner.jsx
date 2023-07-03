@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-target-blank */
 import React, { useEffect, useState } from "react";
-import banner from "../assets/Banner-img.png";
+import me from '../assets/sayed-blck1.png'
 import {
   BsFacebook,
   BsGithub,
@@ -15,12 +15,6 @@ import { motion } from "framer-motion";
 import { fadein } from "../hooks/fadein";
 import TextTransition, { presets } from "react-text-transition";
 
-const TEXTS = [
-  "MERN Stack Developer",
-  "React.JS Developer",
-  "Front End Developer",
-];
-
 const Banner = () => {
   const [index, setIndex] = useState(0);
 
@@ -31,26 +25,26 @@ const Banner = () => {
   return (
     <section id="home" className="mt-24 flex items-center">
       <div className="container mx-auto mt-24 lg:mt-0">
-        <div className="flex flex-col gap-y-10 lg:flex-row lg:items-center">
+        <div className="flex md:px-12 flex-col gap-y-10 lg:flex-row lg:items-center">
           <div className="flex-1 text-center font-secondary lg:text-left">
-            <motion.h3
+            <motion.h2
               variants={fadein("right", 0.1)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
               className="text-xl"
             >
-              Hey There, I'm
-            </motion.h3>
-            <motion.h1
+               Hi, This is
+            </motion.h2>
+            <motion.h2
               variants={fadein("left", 0.3)}
               initial="hidden"
               whileInView={"show"}
               viewport={{ once: false, amount: 0.7 }}
-              className="text-[55px] font-bold leading-[1] lg:text-[110px] text-color uppercase"
+              className="text-[45px] font-bold leading-[1] lg:text-[110px] text-color uppercase"
             >
-              Mahabub Ahmed
-            </motion.h1>
+              abu sayed
+            </motion.h2>
             <motion.div
               variants={fadein("left", 0.3)}
               initial="hidden"
@@ -60,7 +54,7 @@ const Banner = () => {
             >
               <div className="lg:flex">
                 <span className="mr-4">I'm a</span>
-                {/* <TypeAnimation
+                <TypeAnimation
                 sequence={[
                   "MERN Stack Developer",
                   2000,
@@ -73,12 +67,8 @@ const Banner = () => {
                 wrapper="span"
                 repeat={Infinity}
                 className="text-color"
-              /> */}
-                <span className="text-cyan-400 flex items-center justify-center md:text-4xl lg:text-[60px]">
-                  <TextTransition springConfig={presets.gentle}>
-                    {TEXTS[index % TEXTS.length]}
-                  </TextTransition>{" "}
-                </span>
+              />
+                 
               </div>
               <motion.div
                 variants={fadein("up", 0.6)}
@@ -89,28 +79,21 @@ const Banner = () => {
               >
                 <a
                   target="_blank"
-                  href="https://www.facebook.com/mahabub.ahmmed.52/"
+                  href="https://web.facebook.com/profile.php?id=100007603728596"
                 >
                   <BsFacebook className="nav-hover" />
                 </a>
-                <a target="_blank" href="https://github.com/Astro177">
+                <a target="_blank" href="https://github.com/abusayedwd">
                   <BsGithub className="nav-hover" />
                 </a>
+                 
                 <a
                   target="_blank"
-                  href="https://www.instagram.com/mahabub_tro/"
-                >
-                  <BsInstagram className="nav-hover" />
-                </a>
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/mahabub-ahmed-683490278/"
+                  href="https://www.linkedin.com/in/abu-sayed-6619b127b/"
                 >
                   <BsLinkedin className="nav-hover" />
                 </a>
-                <a target="_blank" href="mailto:mahabub.ahmed175@gmail.com">
-                  <SiGmail className="nav-hover" />
-                </a>
+                 
               </motion.div>
               <motion.div
                 variants={fadein("up", 0.8)}
@@ -120,7 +103,6 @@ const Banner = () => {
                 className="max-w-max mx-auto mt-6 lg:mx-0"
               >
                 <a
-                  // href="https://drive.google.com/file/d/1mPTgLk00YEfKOAqL5xaw368dhHroO-_9/view"
                   href="/Resume-(Mahabub Ahmed).pdf"
                   target="_blank"
                 >
@@ -137,11 +119,11 @@ const Banner = () => {
             initial="hidden"
             whileInView={"show"}
             viewport={{ once: false, amount: 0.7 }}
-            className="hidden lg:flex flex-1 mx-auto max-w-max"
+            className=" lg:flex flex-1 mx-auto max-w-max"
           >
             <img
-              src={banner}
-              alt="banner"
+              src={me}
+              alt="me"
               className="rounded-full h-full mix-blend-lighten"
             />
           </motion.div>
