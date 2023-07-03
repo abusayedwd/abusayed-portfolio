@@ -2,6 +2,7 @@ import React from "react";
 import logo from '../../public/logo sayed.jpg';
 import { Link } from "react-scroll";
  
+ 
 
 const Header = () => {
   return (
@@ -18,6 +19,7 @@ const Header = () => {
             </a>
             <h1 className="ml-4">ABU SAYED</h1>
           </div>
+           
           <Link to="projects" smooth={true}>
             <button className="btn-main flex items-center gap-2">
               My Project
