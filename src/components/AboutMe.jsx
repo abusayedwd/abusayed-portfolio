@@ -35,7 +35,7 @@ const AboutMe = () => {
           >
             <h2 className="font-semibold text-color text-5xl">About Me</h2>
             <h3 className="h3 mb-4 mt-4">
-              I'm <span className="text-color">Mahabub Ahmed</span> a MERN Stack
+              I'm <span className="text-color">Abu sayed</span> a MERN Stack
               web developer, loves to create attractive websites with
               user-friendly experiences.
             </h3>
@@ -44,8 +44,8 @@ const AboutMe = () => {
               to all kinds of devices. I have the ability to write semantic,
               cross-browser compatible, clean code by hand that is re-useable,
               maintainable, and easy to understand. The main areas of my
-              expertise are HTML, CSS, Bootstrap, JavaScript , React. I also
-              have intermediate knowledge of Next.js Node.js, Express.js &
+              expertise are HTML, CSS, Bootstrap, Tailwind, JavaScript , Firebase , React. I also
+              have intermediate knowledge of Node.js, Express.js &
               MongoDB. So if you are looking for a front-end developer for your
               company, I can be the solution you're looking for. I am very much
               enthusiastic to show you how my experience and skills meet your
@@ -53,23 +53,15 @@ const AboutMe = () => {
               via
             </p>
             <div className="font-semibold">
+               
               <div className="flex gap-2 items-center">
-                <MdFacebook /> Mahabub Ahmed
+                <MdWhatsapp /> +88 01964917907
               </div>
               <div className="flex gap-2 items-center">
-                <MdWhatsapp /> +8801704031181
-              </div>
-              <div className="flex gap-2 items-center">
-                <MdEmail /> mahabub.ahmed175@gmail.com
-              </div>
-            </div>
+                <MdEmail /> abusayednalita1234@gmail.com
 
-            <Link to="home" smooth={true}>
-              <button className="btn-main mt-2 flex items-center gap-1">
-                Connect With Me
-                <MdOutlineConnectWithoutContact className="hover:animate-bounce"/>
-              </button>
-            </Link>
+              </div>
+            </div> 
           </motion.div>
         </div>
       </div>

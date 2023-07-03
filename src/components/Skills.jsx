@@ -2,6 +2,7 @@ import React from "react";
 import html from "../assets/html-logo.png";
 import css from "../assets/css-logo.png";
 import javascript from "../assets/js_logo.png";
+import firebase from '../assets/firebase.jpg'
 import bootstrap from "../assets/bs.png";
 import tailwind from "../assets/tailwind (1).png";
 import react from "../assets/reeact.png";
@@ -23,7 +24,7 @@ const Skills = () => {
           initial="hidden"
           whileInView={"show"}
           viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-4 h-20 flex-grow card rounded-box place-items-center gap-1 md:gap-8 lg:gap-1"
+          className="grid grid-cols-5 h-20 flex-grow card rounded-box place-items-center gap-1 md:gap-8 lg:gap-1"
         >
           <div className="flex flex-col justify-center items-center">
             <img src={html} alt="" className="w-16 rounded-full nav-hover" />
@@ -33,14 +34,7 @@ const Skills = () => {
             <img src={css} alt="" className="w-16 rounded-full nav-hover" />
             <p className="font-secondary font-semibold">CSS</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
-            <img
-              src={javascript}
-              alt=""
-              className="w-16 rounded-full nav-hover"
-            />
-            <p className="font-secondary font-semibold">JAVASCRIPT</p>
-          </div>
+         
           <div className="flex flex-col justify-center items-center">
             <img
               src={bootstrap}
@@ -48,6 +42,22 @@ const Skills = () => {
               className="w-16 rounded-full nav-hover"
             />
             <p className="font-secondary font-semibold">BOOTSTRAP</p>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <img
+              src={javascript}
+              alt=""
+              className="w-16 rounded-full nav-hover"
+            />
+            <p className="font-secondary ml-3 font-semibold">JAVASCRIPT</p>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <img
+              src={firebase}
+              alt=""
+              className="w-16 h-16 rounded-full nav-hover"
+            />
+            <p className="font-secondary ml-4 font-semibold">FIREBASE</p>
           </div>
         </motion.div>
         <div className="divider divider-horizontal border-cyan-700 border-x-2"></div>
