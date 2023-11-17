@@ -62,7 +62,7 @@
 }
  
 .project-btn{
-  @apply font-semibold drop-shadow-2xl px-6 py-1 text-lg rounded-md bg-cyan-400 text-black border hover:bg-transparent hover:scale-125 transition-all duration-300 border-cyan-500 hover:text-white;
+  @apply font-semibold drop-shadow-2xl px-6 py-1 text-lg rounded-md bg-cyan-400 text-black border hover:bg-transparent hover:scale-75 transition-all duration-300 border-cyan-500 hover:text-white;
 }
 
 

@@ -7,17 +7,16 @@ import { fadein } from "../hooks/fadein";
 import img1 from "../assets/projects/sports camp.png";
 import img2 from "../assets/projects/toyMarket.png";
 import img3 from "../assets/projects/bdrecipe hub.png";
+import trade from "../assets/projects/trade.png";
+import collegeB from '../assets/projects/collegeB.png';
+import electronic from '../assets/projects/electronic.png';
+import nextjs from '../assets/next js.jpg';
  
-// import img5 from "../assets/portfolio-img2.png";
-// import img6 from "../assets/portfolio-img3.png";
 
 import logo1 from "../assets/reeact.png";
-// import logo2 from "../assets/css-logo.png";
-// import logo3 from "../assets/html-logo.png";
 import logo4 from "../assets/mongodb.png";
 import logo5 from "../assets/tailwind (1).png";
 import logo6 from "../assets/express.png";
-// import logo7 from "../assets/js_logo.png";
 import SectionTitle from "../hooks/SectionTitle";
 
 import { TbWorld, TbCode, TbCodeCircle } from "react-icons/tb";
@@ -27,7 +26,7 @@ const projects = [
   {
     image: img1,
     title: "Sport Summer Camp",
-    details: "Summer camp MERN web application.",
+    details: "Summer camp MERN stack web application.",
     technologies: [
       { image: logo1 },
       { image: logo4 },
@@ -64,19 +63,48 @@ const projects = [
     liveLink: "https://food-recipe-a10.web.app/",
     clientCode: "https://github.com/abusayedwd/food-recipe-clientSide",
     serverCode: "https://github.com/abusayedwd/food-recipe-serverSide",
-  },
-  // {
-  //   image: img4,
-  //   title: "Opportunities Point",
-  //   details: "Job hunting full React web application.",
-  //   technologies: [
-  //     { image: logo1 },
-  //     { image: logo6 },
-  //     { image: logo5 },
-  //   ],
-  //   liveLink: "https://exquisite-baklava-16bf3e.netlify.app/",
-  //   clientCode: "https://github.com/Astro177/Opprtunity-Point",
-  // },
+  }, 
+  {
+    image: collegeB,
+    title: "COLLEGE BOOKING",
+    details: "This is online college booking site.",
+    technologies: [
+      { image: logo1 },
+      { image: logo6 },
+      { image: logo5 },
+      { image: logo4 },
+    ],
+    liveLink: "https://college-booking-1ae20.web.app/",
+    clientCode: "https://github.com/abusayedwd/college-booking-client",
+    serverCode: "https://github.com/abusayedwd/college-booking-server",
+  }, 
+  {
+    image: trade,
+    title: "ONLINE TRADING BUSINESS",
+    details: "This is our team project: I Worked as a front-end developer on this project.",
+    technologies: [
+      { image: logo1 },
+      { image: logo6 },
+      { image: logo5 },
+      { image: nextjs },
+    ],
+    liveLink: "https://online-trading-and-business-five.vercel.app/",
+    clientCode: "https://github.com/fensami/online_trading_and_business",
+    
+  }, 
+  {
+    image: electronic,
+    title: "ELECTRONICS HUB",
+    details: " Online shoping and full React web application.",
+    technologies: [
+      { image: logo1 },
+      { image: logo6 },
+      { image: logo5 },
+    ],
+    liveLink: "https://electronics-shop-client.vercel.app/",
+    clientCode: "https://github.com/abusayedwd/electronics-shop-client",
+     
+  }, 
       
 ];
 const Projects = () => {
@@ -95,7 +123,7 @@ const Projects = () => {
             <SectionTitle heading={"PROJECTS"} />
             <div className="text-center mt-6">
               <h2 className="h2 leading-tight text-color font-semibold">
-                My Latest  Work
+                My Work
               </h2>
               <p >
                 Here are the projects that i have finished <br /> working on these are my best projects so far  you <br /> can see the details when you hover over the image.
@@ -110,12 +138,11 @@ const Projects = () => {
             viewport={{ once: false, amount: 0.3 }}
             className="grid sm:grid-cols-1 lg:grid-cols-3 items-center justify-center gap-10"
           >
-            {projects.slice(0, 4).map((project) => (
+            {projects.map((project) => (
               <div
                 key={project.title}
                 className="group relative overflow-hidden border-2 border-white/50 rounded-xl"
               >
-                <div className="group-hover:bg-black/70 w-1/2 absolute z-40 transition-all duration-300"></div>
                 <img
                   src={project.image}
                   alt=""
@@ -136,7 +163,7 @@ const Projects = () => {
                     />
                   ))}
                 </div>
-                <div className="absolute -bottom-full group-hover:bottom-14 transition-all duration-700 z-50 flex sm:gap-0 md:gap-4">
+                <div className="absolute -bottom-full w-[90%] mx-auto group-hover:bottom-14 transition-all duration-700 z-50 grid  grid-cols-3 sm:gap-0 md:gap-4">
                   <a href={project.liveLink} target="_blank">
                     <button className="project-btn flex items-center gap-2">
                       <TbWorld className="hover:animate-spin" />
