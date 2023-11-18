@@ -23,7 +23,7 @@ const Banner = () => {
     return () => clearTimeout(intervalId);
   }, []);
   return (
-    <section id="home" className="mt-24 flex items-center">
+    <section id="home" className="mt-10 flex items-center">
       <div className="container mx-auto mt-24 lg:mt-0">
         <div className="flex md:px-12 flex-col gap-y-10 lg:flex-row lg:items-center">
           <div className="flex-1 text-center font-secondary lg:text-left">
