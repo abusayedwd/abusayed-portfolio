@@ -17,7 +17,7 @@ import SectionTitle from "../hooks/SectionTitle";
 const Skills = () => {
   return (
     <>
-      <SectionTitle heading="MY SKILLS" />
+      <SectionTitle heading="SKILLS" />
       <div className="md:flex mt-12 w-full">
         <motion.div
           variants={fadein("right", 0.4)}

@@ -163,7 +163,7 @@ const Projects = () => {
                     />
                   ))}
                 </div>
-                <div className="absolute -bottom-full w-[90%] mx-auto group-hover:bottom-14 transition-all duration-700 z-50 grid  grid-cols-3 sm:gap-0 md:gap-4">
+                <div className="absolute -bottom-full w-[90%] mx-auto group-hover:bottom-10 transition-all duration-700 z-50 grid  grid-cols-3 sm:gap-0 md:gap-4">
                   <a href={project.liveLink} target="_blank">
                     <button className="project-btn flex items-center gap-2">
                       <TbWorld className="hover:animate-spin" />
