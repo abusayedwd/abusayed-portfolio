@@ -1,100 +1,81 @@
 import React from "react";
-import html from "../assets/html-logo.png";
-import css from "../assets/css-logo.png";
-import javascript from "../assets/js_logo.png";
-import firebase from '../assets/firebase.jpg'
-import bootstrap from "../assets/bs.png";
-import tailwind from "../assets/tailwind (1).png";
-import react from "../assets/reeact.png";
-import node from "../assets/Noode.png";
+import { motion } from "framer-motion";
+import { reveal } from "../hooks/fadein";
+import SectionTitle from "../hooks/SectionTitle";
+
+import html from "../assets/html.png";
+import css from "../assets/css.png";
+import javascript from "../assets/javascript.png";
+import bootstrap from "../assets/bootstrap.png";
+import tailwind from "../assets/tailwind.png";
+import react from "../assets/react.png";
+import node from "../assets/node.png";
 import mongo from "../assets/mongodb.png";
 import express from "../assets/express.png";
+import firebase from "../assets/firebase.jpg";
 
-import { motion } from "framer-motion";
-import { fadein } from "../hooks/fadein";
-import SectionTitle from "../hooks/SectionTitle";
+const groups = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "HTML", icon: html },
+      { name: "CSS", icon: css },
+      { name: "JavaScript", icon: javascript },
+      { name: "React", icon: react },
+      { name: "Tailwind CSS", icon: tailwind },
+      { name: "Bootstrap", icon: bootstrap },
+    ],
+  },
+  {
+    title: "Backend & tools",
+    items: [
+      { name: "Node.js", icon: node },
+      { name: "Express", icon: express },
+      { name: "MongoDB", icon: mongo },
+      { name: "Firebase", icon: firebase },
+    ],
+  },
+];
 
 const Skills = () => {
   return (
-    <>
-      <SectionTitle heading="SKILLS" />
-      <div className="md:flex mt-12 w-full">
-        <motion.div
-          variants={fadein("right", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-5 h-20 flex-grow card rounded-box place-items-center gap-1 md:gap-8 lg:gap-1"
-        >
-          <div className="flex flex-col justify-center items-center">
-            <img src={html} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">HTML</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img src={css} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">CSS</p>
-          </div>
-         
-          <div className="flex flex-col justify-center items-center">
-            <img
-              src={bootstrap}
-              alt=""
-              className="w-16 rounded-full nav-hover"
-            />
-            <p className="font-secondary font-semibold">BOOTSTRAP</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img
-              src={javascript}
-              alt=""
-              className="w-16 rounded-full nav-hover"
-            />
-            <p className="font-secondary ml-3 font-semibold">JAVASCRIPT</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img
-              src={firebase}
-              alt=""
-              className="w-16 h-16 rounded-full nav-hover"
-            />
-            <p className="font-secondary ml-4 font-semibold">FIREBASE</p>
-          </div>
-        </motion.div>
-        {/* <div className="divider divider-horizontal border-cyan-700 border-x-2"></div> */}
-        <motion.div
-          variants={fadein("left", 0.4)}
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.3 }}
-          className="grid grid-cols-5 gap-1 h-20 flex-grow card rounded-box place-items-center mt-12 md:mt-0 md:gap-4 lg:gap-1"
-        >
-          <div className="flex flex-col justify-center items-center">
-            <img
-              src={tailwind}
-              alt=""
-              className="w-16 rounded-full nav-hover"
-            />
-            <p className="font-secondary font-semibold">TAILWIND</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img src={react} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">ReactJS</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img src={node} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">NODE</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img src={mongo} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">MongoDB</p>
-          </div>
-          <div className="flex flex-col justify-center items-center">
-            <img src={express} alt="" className="w-16 rounded-full nav-hover" />
-            <p className="font-secondary font-semibold">ExpressJS</p>
-          </div>
-        </motion.div>
+    <section id="skills" className="section border-t border-zinc-200 dark:border-zinc-800">
+      <div className="container-page">
+        <SectionTitle
+          eyebrow="Skills"
+          heading="Technologies I work with"
+          description="The tools I reach for most often when building and shipping web applications."
+        />
+
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {groups.map((group, gi) => (
+            <motion.div
+              key={group.title}
+              {...reveal(0.05 + gi * 0.05)}
+              className="rounded-xl border border-zinc-200 p-5 dark:border-zinc-800"
+            >
+              <h3 className="eyebrow mb-4">{group.title}</h3>
+              <ul className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <li
+                    key={item.name}
+                    className="inline-flex items-center gap-2 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-1.5 text-sm font-medium text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"
+                  >
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="h-4 w-4 rounded-sm object-contain"
+                      loading="lazy"
+                    />
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </>
+    </section>
   );
 };
 
