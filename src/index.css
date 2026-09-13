@@ -2,67 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-.gradient,
-.active {
-  background: linear-gradient(
-    92.23deg,
-    #0e8dd7 21.43%,
-    #0594b7 50.63%,
-    #07a8d1 100%,
-    #0880e1 117.04%
-  );
-  @apply scale-125;
-}
-
-.active {
-  color: #fff;
-  padding: 1rem;
-  border-radius: 100%;
-  font-weight: 600;
-}
-
 @layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply font-secondary text-lg leading-8 text-white;
+    @apply bg-white text-zinc-900 font-sans antialiased;
+    @apply dark:bg-zinc-950 dark:text-zinc-100;
   }
-  .h2 {
-    @apply font-primary text-[32px] mb-6 tracking-[10%] uppercase;
+
+  ::selection {
+    @apply bg-accent/20;
   }
-  .h3 {
-    @apply font-primary font-semibold text-[26px] mb-6 leading-[46px];
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
-  .btn {
-    @apply rounded-full font-primary text-white font-medium;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-content px-6 lg:px-8;
   }
-  .btn-sm {
-    @apply h-[48px] px-6 text-sm;
-  }
-  .btn-lg {
-    @apply h-[56px] px-10 text-base;
-  }
-  .btn-link {
-    @apply text-base;
-  }
-  .text-gradient {
-    @apply bg-gradient-to-r text-transparent bg-clip-text from-[#42A6E3] to-[#FF56F6] font-bold font-primary hover:from-[#FF56F6] hover:to-[#42A6E3];
-  }
+
   .section {
-    @apply py-8 lg:py-24 lg:h-screen flex items-center;
+    @apply scroll-mt-20 py-20 md:py-28;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950;
+  }
+
+  .btn-primary {
+    @apply btn bg-accent text-white hover:bg-blue-700;
+  }
+
+  .btn-ghost {
+    @apply btn border border-zinc-300 text-zinc-800 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-100 dark:hover:bg-zinc-900;
+  }
+
+  .link-underline {
+    @apply text-zinc-600 underline-offset-4 transition-colors hover:text-accent hover:underline dark:text-zinc-300;
+  }
+
+  .nav-link {
+    @apply relative cursor-pointer text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute -bottom-[22px] left-0 h-0.5 w-full origin-left scale-x-0 bg-accent transition-transform duration-200;
+  }
+
+  .nav-link.nav-active {
+    @apply text-zinc-900 dark:text-white;
+  }
+
+  .nav-link.nav-active::after {
+    @apply scale-x-100;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-zinc-200 bg-zinc-50 px-2 py-0.5 text-xs font-medium text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400;
   }
 }
-
-.nav-hover {
-  @apply hover:bg-cyan-400 hover:rounded-full transition duration-200 hover:scale-125 rounded-full hover:shadow-2xl;
-}
-.btn-main {
-  @apply font-semibold drop-shadow-2xl px-4 py-2 md:px-8 md:py-3 text-lg rounded-full bg-transparent text-white hover:bg-gradient-to-r hover:from-cyan-600 hover:via-cyan-400 hover:to-cyan-500 border-2 border-cyan-500 hover:border-cyan-400 hover:text-black hover:scale-110 transition duration-200;
-}
-.text-color{
-  @apply bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-600 text-transparent bg-clip-text;
-}
- 
-.project-btn{
-  @apply font-semibold drop-shadow-2xl px-6 py-1 text-lg rounded-md bg-cyan-400 text-black border hover:bg-transparent hover:scale-75 transition-all duration-300 border-cyan-500 hover:text-white;
-}
-
-

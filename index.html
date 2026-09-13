@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/public/logo sayed.jpg" />
-    <!-- google fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)" />
+
+    <title>Abu Sayed — Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Abu Sayed is a full-stack (MERN) developer building fast, accessible web applications with React, Node.js and MongoDB."
+    />
+
+    <!-- Open Graph / Twitter. Replace the URLs with your deployed domain. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Abu Sayed — Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Full-stack (MERN) developer building fast, accessible web applications with React, Node.js and MongoDB."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Abu Sayed — Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack (MERN) developer building fast, accessible web applications with React, Node.js and MongoDB."
+    />
+    <meta name="twitter:image" content="/og.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-     
- 
-     
-    <!-- aos animation -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abu Sayed</title>
+
+    <script>
+      // Set theme before first paint to avoid a flash.
+      (function () {
+        try {
+          var stored = localStorage.getItem("theme");
+          var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (stored === "dark" || (!stored && prefersDark)) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("AkC6mNX1-79ab7Oxz");
-      })();
-    </script>
   </body>
 </html>

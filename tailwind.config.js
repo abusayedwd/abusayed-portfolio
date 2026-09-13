@@ -1,30 +1,35 @@
+var require = createRequire(import.meta.url);
+var module = { exports: {} };
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
-    fontFamily: {
-      primary: "Orbitron",
-      secondary: "Rajdhani",
-      tertiary: "Aldrich",
-    },
-    container: {
-      padding: {
-        DEFAULT: "15px",
-      },
-    },
     extend: {
-      backgroundImage: {
-        site: "url('./assets/site-bg.jpg')",
-        about: "url('./assets/about-image.png')",
-        services: "url('./assets/service.png')",
+      fontFamily: {
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "sans-serif",
+        ],
+      },
+      colors: {
+        accent: {
+          DEFAULT: "#2563eb",
+          fg: "#ffffff",
+        },
+      },
+      maxWidth: {
+        content: "72rem",
       },
     },
   },
-  daisyui: {
-    themes: [
-      "night",
-      "cupcake"
-    ],
-  },
-  plugins: [require("daisyui")],
+  plugins: [],
 };
