@@ -1,21 +1,21 @@
-export const fadein = (direction, delay) => {
-    return {
-      hidden: {
-        y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
-        opacity: 0,
-        x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0,
-      },
-      show: {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        transition: {
-          type: 'tween',
-          duration: 1.2,
-          delay: delay,
-          ease: [0.25, 0.25, 0.25, 0.75],
-        },
-      },
-    };
-  };
-  
+// Subtle fade-up used across sections. Keeps motion minimal and professional.
+export const fadein = (delay = 0) => ({
+  hidden: { opacity: 0, y: 12 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      delay,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+});
+
+// Shared props so every animated block behaves the same way.
+export const reveal = (delay = 0) => ({
+  variants: fadein(delay),
+  initial: "hidden",
+  whileInView: "show",
+  viewport: { once: true, amount: 0.3 },
+});

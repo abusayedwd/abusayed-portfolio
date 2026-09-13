@@ -1,27 +1,30 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 import { motion } from "framer-motion";
-import { fadein } from "../hooks/fadein";
+import { reveal } from "./fadein";
 
-const SectionTitle = ({ heading }) => {
+const SectionTitle = ({ eyebrow, heading, description }) => {
   return (
-    <div className="text-center flex flex-col items-center justify-center mx-auto mt-20">
-      <motion.p
-        variants={fadein("up", 0.4)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.3 }}
-        className="font-semibold font-secondary text-4xl"
+    <div className="max-w-2xl">
+      {eyebrow && (
+        <motion.p {...reveal(0)} className="eyebrow mb-3">
+          {eyebrow}
+        </motion.p>
+      )}
+      <motion.h2
+        {...reveal(0.05)}
+        className="text-2xl font-semibold tracking-tight sm:text-3xl"
       >
         {heading}
-      </motion.p>
-      <motion.hr
-        variants={fadein("up", 0.3)}
-        initial="hidden"
-        whileInView={"show"}
-        viewport={{ once: false, amount: 0.5 }}
-        className="border-2 border-cyan-600 mx-auto w-[220px] mt-2"
-      />
+      </motion.h2>
+      {description && (
+        <motion.p
+          {...reveal(0.1)}
+          className="mt-3 text-base leading-7 text-zinc-600 dark:text-zinc-400"
+        >
+          {description}
+        </motion.p>
+      )}
     </div>
   );
 };
